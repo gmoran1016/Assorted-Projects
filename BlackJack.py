@@ -79,7 +79,7 @@ class Chips:
 def take_bet(chips):
     while True:
         try:
-            chips.bet = int(input('How many chips would you like to bet?  '))
+            chips.bet = int(input('\nHow many chips would you like to bet?  '))
         except ValueError:
             print("Sorry, a bet must be an integer!")
         else:
@@ -100,7 +100,7 @@ def hit_or_stand(deck,hand):
     global playing
 
     while True:
-        x = input("Would you like to Hit or Stand? Enter 'h' or 's'")
+        x = input("\nWould you like to Hit or Stand? Enter 'h' or 's'  ")
 
         if x[0].lower() == 'h':
             hit(deck,hand)  # hit() function defined above
@@ -119,7 +119,7 @@ def hit_or_stand(deck,hand):
 def show_some(player,dealer):
     print("\nDealer's Hand")
     print("<card hidden>")
-    print(' ', dealer.cards[1])
+    print(dealer.cards[1])
     print("\nPlayer's Hand: ", *player.cards, sep= '\n')
     print("Player's Hand = ", player.value)
 
@@ -154,7 +154,7 @@ def push(player,dealer):
 #NOW FOR THE GAME
 while True:
     # Print an opening statement
-    print("Welcome to Griffin's Blackjack game")
+    print("\nWelcome to Griffin's Blackjack game")
 
     # Create & shuffle the deck, deal two cards to each player
     deck = Deck()
@@ -218,7 +218,7 @@ while True:
     print("\nPlayers winnings stand at", player_chips.total)
 
     # Ask to play again
-    new_game = input("would you like to play again? Enter 'y' or 'n'")
+    new_game = input("\nwould you like to play again? Enter 'y' or 'n'  ")
     if new_game[0].lower() == 'y':
         playing = True
         continue
